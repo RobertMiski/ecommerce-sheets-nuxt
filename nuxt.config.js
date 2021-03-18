@@ -3,7 +3,10 @@ export default {
   
   target: 'static',
   generate: {
-    fallback: true
+    fallback: true,
+    routes: [
+      '/pages/index'
+    ]
   },
   apollo: {
     clientConfigs: {
