@@ -30,7 +30,7 @@ export default {
         let category = numbers.gsx$category.$t;
         let image = numbers.gsx$image.$t;
         let id = numbers.gsx$id.$t;
-
+        let bulibasa = 1;
         let info = { 
         category:category,
         price: price,
