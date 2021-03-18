@@ -5,6 +5,7 @@
       <h2> {{ article1.name }} </h2>
       <p> {{ article1.category }} </p>
       <p> {{ article1.price }} </p>
+      <button>Add to cart</button>
       
     </div>
   </div>
