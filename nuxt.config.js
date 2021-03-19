@@ -36,7 +36,7 @@ export default {
     ],
     script: [
       { src: 'https://code.jquery.com/jquery-3.6.0.min.js'}, 
-      { src: 'https://cdn.snipcart.com/themes/v3.0.16/default/snipcart.js'} 
+      { src: 'https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.js'} 
     ]
 
   },
