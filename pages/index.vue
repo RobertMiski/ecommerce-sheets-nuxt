@@ -54,6 +54,7 @@ export default {
 
       });
     return {article}
+    console.log(article);
   }
 }
 </script>
