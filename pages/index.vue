@@ -5,6 +5,7 @@
       <h2> {{ article1.name }} </h2>
       <p> {{ article1.category }} </p>
       <p> {{ article1.price }} </p>
+      <p>{{article1.id}}</p>
       <button
   class="snipcart-add-item"
   v-bind:data-item-id="article1.id"
