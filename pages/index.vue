@@ -6,14 +6,14 @@
       <p> {{ article1.category }} </p>
       <p> {{ article1.price }} </p>
       <button
-      class="snipcart-add-item"
-      data-item-id="article1.id"
-      data-item-price="article1.price"
-      data-item-url="https://sleepy-mcclintock-aba2ad.netlify.app/"
-      data-item-name="article1.name"
-      >
-      Add to cart
-      </button>
+  class="snipcart-add-item"
+  v-bind:data-item-id="article1.id"
+  v-bind:data-item-price="article1.price"
+  v-bind:data-item-name="article1.name"
+  data-item-url="https://sleepy-mcclintock-aba2ad.netlify.app/"
+  >
+  Add to cart
+</button>
       
     </div>
   </div>
