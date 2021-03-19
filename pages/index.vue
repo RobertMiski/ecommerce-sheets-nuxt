@@ -10,7 +10,7 @@
   v-bind:data-item-id="article1.id"
   v-bind:data-item-price="article1.price"
   v-bind:data-item-name="article1.name"
-  data-item-url="https://sleepy-mcclintock-aba2ad.netlify.app/"
+  data-item-url="/"
   >
   Add to cart
 </button>
