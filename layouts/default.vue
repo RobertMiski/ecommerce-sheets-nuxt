@@ -1,8 +1,8 @@
 <template>
   <div>
-    <div hidden id="snipcart" data-api-key="MTM5Yzg1MGQtNzM5MS00NDhkLWExNmItY2UxMzRiY2RjYzYyNjM3NTE1NDI2OTEwNzIxMjI1"></div>
-    <Nuxt />
     
+    <Nuxt />
+    <div hidden id="snipcart" data-api-key="MTM5Yzg1MGQtNzM5MS00NDhkLWExNmItY2UxMzRiY2RjYzYyNjM3NTE1NDI2OTEwNzIxMjI1"></div>
     
   </div>
   
