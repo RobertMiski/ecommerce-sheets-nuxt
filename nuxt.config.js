@@ -35,7 +35,7 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ],
     script: [
-      { src: 'https://code.jquery.com/jquery-3.6.0.min.js'}, 
+      
       { src: 'https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.js'} 
     ]
 
