@@ -6,6 +6,7 @@
       <p> {{ article1.category }} </p>
       <p> {{ article1.price }} </p>
       <button
+      class="snipcart-add-item"
       data-item-id="article1.id"
       data-item-price="article1.price"
       data-item-url="https://sleepy-mcclintock-aba2ad.netlify.app/"
