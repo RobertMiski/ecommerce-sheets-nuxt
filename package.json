@@ -11,6 +11,7 @@
   "dependencies": {
     "@nuxtjs/apollo": "^4.0.1-rc.5",
     "@nuxtjs/axios": "^5.13.1",
+    "@nuxtjs/snipcart": "^1.2.2",
     "core-js": "^3.8.3",
     "graphql": "^15.5.0",
     "nuxt": "^2.14.12"
