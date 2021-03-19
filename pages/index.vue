@@ -3,12 +3,14 @@
     <div hidden id="snipcart" data-api-key="MTM5Yzg1MGQtNzM5MS00NDhkLWExNmItY2UxMzRiY2RjYzYyNjM3NTE1NDI2OTEwNzIxMjI1"></div>
     <h1>Cafetaria El Patron</h1>
     <div class="article" v-for="article1 in article" v-bind:key="article1">
+      <img v-bind:src="article1.image" alt="" width="300" height="300">
       <h2> {{ article1.name }} </h2>
       <p> {{ article1.category }} </p>
       <p> {{ article1.price }} </p>
       <p>{{article1.id}}</p>
       <button
   class="snipcart-add-item"
+  v-bind:data-item-image="article1.image"
   v-bind:data-item-id="article1.id"
   v-bind:data-item-price="article1.price"
   v-bind:data-item-name="article1.name"
