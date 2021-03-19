@@ -46,8 +46,8 @@ export default {//skr
         price: price,
         name:name,
       
-        image:image
-      
+        image:image,
+        id:id
       
       
     }
