@@ -1,5 +1,6 @@
 <template>
   <div id="homepage">
+    <div hidden id="snipcart" data-api-key="MTM5Yzg1MGQtNzM5MS00NDhkLWExNmItY2UxMzRiY2RjYzYyNjM3NTE1NDI2OTEwNzIxMjI1"></div>
     <h1>Cafetaria El Patron</h1>
     <div class="article" v-for="article1 in article" v-bind:key="article1">
       <h2> {{ article1.name }} </h2>
