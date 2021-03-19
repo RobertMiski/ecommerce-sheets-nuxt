@@ -12,7 +12,7 @@
   v-bind:data-item-price="article1.price"
   v-bind:data-item-name="article1.name"
   data-item-url="/"
-  >
+  >  
   Add to cart
 </button>
       
@@ -26,7 +26,7 @@ const _ = require('lodash')
 //  your spreadsheet has to be PUBLIC and SHARED with everybody to be accessed this way
 //  https://sheets.googleapis.com/v4/spreadsheets/{SPREASHEET_ID}/values/{SHEET_TAB_NAME}!{CELLS}?key={GOOGLE_API_KEY}
 const url = 'https://spreadsheets.google.com/feeds/list/1QuNTaRm_mgvSwVyaZgLQ9XgaHPdVVnKSswNa02ruk0Y/od6/public/values?alt=json'
-export default {
+export default {//skr
   async asyncData () {
       const res  = await fetch("https://spreadsheets.google.com/feeds/list/1QuNTaRm_mgvSwVyaZgLQ9XgaHPdVVnKSswNa02ruk0Y/od6/public/values?alt=json");
       const data = await res.json();
