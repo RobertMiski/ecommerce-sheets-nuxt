@@ -1,33 +1,56 @@
 <template>
   <div id="homepage">
     <div hidden id="snipcart" data-api-key="MTM5Yzg1MGQtNzM5MS00NDhkLWExNmItY2UxMzRiY2RjYzYyNjM3NTE1NDI2OTEwNzIxMjI1"></div>
-    <h1>Cafetaria El Patron</h1>
-    <div class="article" v-for="article1 in article" v-bind:key="article1">
-      <img v-bind:src="article1.image" alt="" width="300" height="300">
-      <h2> {{ article1.name }} </h2>
-      <p> {{ article1.category }} </p>
-      <p> {{ article1.price }} </p>
-      
-      <button
-  class="snipcart-add-item"
-  v-bind:data-item-image="article1.image"
-  v-bind:data-item-id="article1.id"
-  v-bind:data-item-price="article1.price"
-  v-bind:data-item-name="article1.name"
-  data-item-url="/"
-  >  
-  Add to cart
-</button>
-      
+    <nav>
+    <div  class="nav-wrapper black">
+      <a href="#" class="brand-logo truncate" style="font-size:23px">Cafetaria El Patron</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a class="btn-floating btn-large waves-effect waves-light grey darken-3 "><i class="material-icons">shopping_cart</i></a></li>
+
+      </ul>
+    </div>
+  </nav>
+    
+    <div class="container">
+      <div class="row">
+        <div class="col m4 l4 cont">
+          <div class="article m4 l4 categorie" v-for="article1 in article" v-bind:key="article1">
+            <div class="card">
+              
+              <div class="card-image">
+                <img v-bind:src="article1.image" alt="" height="220">
+              </div>
+              
+              <div class="card-content">
+                <span class="card-title" style="font-size:20px">
+                 <strong>{{ article1.name }} </strong>  <br>
+                </span>
+                Pret
+                <p> {{ article1.price }} LEI<i class="fa fa-life-ring" aria-hidden="true"></i></p> 
+                <button
+                  class="snipcart-add-item btn black white-text" style="border-radius:2rem !important; margin-top:0.5rem; font-size:13px"
+                  v-bind:data-item-image="article1.image"
+                  v-bind:data-item-id="article1.id"
+                  v-bind:data-item-price="article1.price"
+                  v-bind:data-item-name="article1.name"
+                  data-item-url="/">  
+                  Add to cart
+                </button>
+              </div>
+              
+            </div>
+          </div>
+        </div>
     </div>
   </div>
+    
+</div>
 </template>
 
 <script>
 
 const _ = require('lodash')
-//  your spreadsheet has to be PUBLIC and SHARED with everybody to be accessed this way
-//  https://sheets.googleapis.com/v4/spreadsheets/{SPREASHEET_ID}/values/{SHEET_TAB_NAME}!{CELLS}?key={GOOGLE_API_KEY}
+
 const url = 'https://spreadsheets.google.com/feeds/list/1QuNTaRm_mgvSwVyaZgLQ9XgaHPdVVnKSswNa02ruk0Y/od6/public/values?alt=json'
 export default {//skr
   async asyncData () {
@@ -63,15 +86,19 @@ export default {//skr
 </script>
 
 <style>
-#homepage {
-  padding-top: 10vh;
-  max-width: 70vw;
-  margin: auto;
+* {
+  font-family: "Rubik", sans-serif;
+  
 }
-#homepage h1 {
-  padding-bottom: 5vh;
+
+.btn-large {
+  text-align: center;
+  height: 2rem;
+  width: 10rem;
+  font-weight: 600;
+  vertical-align: middle;
 }
-#homepage .article {
-  padding-bottom: 5vh;
-}
+
+
+
 </style>

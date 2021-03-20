@@ -32,11 +32,17 @@ export default {
       { rel: 'preconnect', href: "https://app.snipcart.com" },
       { rel: 'preconnect', href: "https://cdn.snipcart.com" },
       { rel: 'stylesheet', href: "https://cdn.snipcart.com/themes/v3.0.16/default/snipcart.css" },
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href: "https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" },
+      { rel: 'stylesheet', href: "https://fonts.googleapis.com/icon?family=Material+Icons" },
+      { rel: 'preconnect', href: "https://fonts.gstatic.com" },
+      { rel: 'stylesheet', href: "https://fonts.googleapis.com/css2?family=Rubik:wght@400&display=swap" },
+
     ],
     script: [
       { src: 'https://code.jquery.com/jquery-3.6.0.min.js'}, 
-      { src: 'https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.js', async:true} 
+      { src: 'https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.js', async:true} ,
+      { src: 'https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js'}
     ]
 
   },
