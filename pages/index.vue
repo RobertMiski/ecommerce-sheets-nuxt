@@ -10,11 +10,26 @@
       </ul>
     </div>
   </nav>
-    
+  
+  <div class="row" style="margin-top:2rem">
+    <div class="categories center" >
+        <ul id="menu" ref="menu">
+          <li class="z-depth-1 broker" v-bind:data-category ="categories[index*0].category" v-for="(categories,index) in entries"   v-bind:key="categories">
+          <a class="  transparent black-text  ">{{categories[index*0].category}}</a> 
+          </li>
+        </ul>
+        
+      
+      </div>
+  </div>
+  
+
+
     <div class="container">
+      
       <div class="row">
-        <div class="col m4 l4 cont">
-          <div class="article m4 l4 categorie" v-for="article1 in article" v-bind:key="article1">
+        <div class="col m4 l4 cont" ref="cont">
+          <div class="article m4 l4 categorie" ref="cox" v-for="article1 in article" v-bind:key="article1" v-bind:data-filter="article1.category">
             <div class="card">
               
               <div class="card-image">
@@ -54,10 +69,11 @@ const _ = require('lodash')
 const url = 'https://spreadsheets.google.com/feeds/list/1QuNTaRm_mgvSwVyaZgLQ9XgaHPdVVnKSswNa02ruk0Y/od6/public/values?alt=json'
 export default {//skr
   async asyncData () {
-      const res  = await fetch("https://spreadsheets.google.com/feeds/list/1QuNTaRm_mgvSwVyaZgLQ9XgaHPdVVnKSswNa02ruk0Y/od6/public/values?alt=json");
+    let array = [];
+    const res  = await fetch("https://spreadsheets.google.com/feeds/list/1QuNTaRm_mgvSwVyaZgLQ9XgaHPdVVnKSswNa02ruk0Y/od6/public/values?alt=json");
       const data = await res.json();
       const data2 = data.feed.entry;
-      console.log(data2);
+      
       let article = [];
       data2.forEach(numbers => {
         let price = numbers.gsx$number.$t;
@@ -79,9 +95,45 @@ export default {//skr
       article.push(info);
 
       });
-    return {article}
-    console.log(article);
+      
+      var grouped = _.groupBy(article, 'category');
+      array.push(grouped);
+      const entries = Object.values(array[0]);
+      console.log(entries);
+  
+
+    return {article,entries}
+    
+  },
+  mounted() {
+    let butoane = this.$refs.menu.children;
+    
+    let main = this.$refs.cont.children;
+    for (let i = 0;i<butoane.length;i++) {
+    
+    butoane[i].addEventListener('click',function () {
+      for (let x = 0;x<butoane.length;x++) {
+        butoane[x].classList.remove("active");
+      }
+      this.classList.add("active");
+      const displayItems = this.getAttribute('data-category');
+
+    /*   console.log(displayItems); */
+      for(let z = 0;z<main.length;z++) {
+        /* console.log(main[z]); */
+        main[z].classList.add("hide");
+
+        if((main[z].getAttribute('data-filter')==displayItems) ) {
+          main[z].classList.remove("hide");
+          main[z].classList.add("show");
+          
+        }
+        
+      }
+    } )  
   }
+  }
+  
 }
 </script>
 
@@ -99,6 +151,33 @@ export default {//skr
   vertical-align: middle;
 }
 
+.broker{
+  list-style-type:none;
+  width: 7rem !important;
+  background-color: white;
+  justify-content: center;
+  padding: 0.5rem !important;
+  border-radius: 1rem !important;
+  font-size: 14px;
+  display: inline-flex;
+  margin-right: 0.5rem;
+  margin-bottom: 2rem;
+}
 
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.active {
+  background-color: #333 !important;
+}
+
+.active a {
+  color: white !important;
+}
 
 </style>

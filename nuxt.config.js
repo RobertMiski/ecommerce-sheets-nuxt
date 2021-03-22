@@ -42,7 +42,8 @@ export default {
     script: [
       { src: 'https://code.jquery.com/jquery-3.6.0.min.js'}, 
       { src: 'https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.js', async:true} ,
-      { src: 'https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js'}
+      { src: 'https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js'},
+      { src: 'https://cdn.jsdelivr.net/lodash/4.17.2/lodash.min.js'}
     ]
 
   },
